@@ -1,0 +1,7 @@
+FROM alpine-jdk:base
+MAINTAINER javaonfly
+RUN apk --no-cache add netcat-openbsd
+COPY jarfiles/SearchService-1.0.4.jar /opt/lib/
+ENTRYPOINT ["/usr/bin/java"]
+CMD ["-jar", "/opt/lib/SearchService-1.0.4.jar"]
+EXPOSE 8302

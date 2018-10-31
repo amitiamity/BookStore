@@ -1,0 +1,6 @@
+FROM alpine-jdk:base
+MAINTAINER javaonfly
+COPY jarfiles/EurekaServer-1.0.4.jar /opt/lib/
+ENTRYPOINT ["/usr/bin/java"]
+CMD ["-jar", "/opt/lib/EurekaServer-1.0.4.jar"]
+EXPOSE 8761
